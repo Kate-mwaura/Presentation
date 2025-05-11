@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git & GitHub Presentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            display: flex; /* Use flexbox for layout */
+        }
+
+        .sidebar {
+            width: 220px;
+            background-color: #e0e0ff; /* Light blueish for sidebar */
+            padding: 20px;
+            height: 100vh; /* Full height */
+            position: fixed; /* Fixed position */
+            overflow-y: auto; /* Scroll if content overflows */
+        }
+
+        .sidebar h2 {
+            color: #00008B; /* Dark Blue */
+            text-align: center;
+            margin-top: 0;
+        }
+
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .sidebar ul li a {
+            display: block;
+            color: #333;
+            padding: 8px 0;
+            text-decoration: none;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .sidebar ul li a:hover {
+            color: #00008B; /* Dark Blue */
+            background-color: #d0d0f0;
+        }
+
+        .main-content {
+            flex-grow: 1; /* Takes remaining space */
+            padding: 20px 40px;
+            margin-left: 260px; /* Sidebar width + some padding */
+            background-color: #fff;
+        }
+
+        h1, h2, h3 {
+            color: #0000CD; /* Medium Blue for headings */
+        }
+
+        p, li {
+            color: #000000; /* Black for content */
+            margin-bottom: 1em;
+        }
+
+        .code {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #f0f0f0;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+
+        .image-placeholder, .slideshow-placeholder {
+            border: 2px dashed #0000CD; /* Medium Blue border */
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+            background-color: #eef;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+
+    <aside class="sidebar">
+        <h2>Navigation</h2>
+        <ul>
+            <li><a href="#intro">Introduction</a></li>
+            <li><a href="#why-vcs">Why Version Control?</a></li>
+            <li><a href="#what-is-git">What is Git?</a></li>
+            <li><a href="#git-workflow">Basic Git Workflow</a></li>
+            <li><a href="#what-is-github">What is GitHub?</a></li>
+            <li><a href="#github-workflow">Collaborative GitHub Workflow</a></li>
+            <li><a href="#devops-lifecycle">Git/GitHub in DevOps</a></li>
+            <li><a href="#benefits">Benefits for DevOps</a></li>
+            <li><a href="#demo">Live Demo Ideas</a></li>
+            <li><a href="#best-practices">Best Practices</a></li>
+            <li><a href="#summary">Summary</a></li>
+        </ul>
+    </aside>
+
+    <main class="main-content">
+        <header>
+            <h1>Git & GitHub</h1>
+            <p>Presented by: catherine Mwaura | Course: DevOps | Date: 11/05/2025</p>
+        </header>
+
+        <section id="intro">
+            <h2>Introduction</h2>
+            <p>Welcome! This presentation explores Git and GitHub, two fundamental tools that form the backbone of modern software development and DevOps practices. We'll cover why version control is essential, delve into the core concepts of Git, understand how GitHub enhances collaboration, and see how these tools integrate into the DevOps lifecycle.</p>
+        </section>
+
+        <section id="why-vcs">
+            <h2>The "Problem": Why Version Control?</h2>
+            <p>Imagine managing a project without a structured way to track changes. You might end up with confusing file names like <code class="code">project_final.doc</code>, <code class="code">project_final_v2.doc</code>, or even <code class="code">project_final_REALLY_final.doc</code>. This chaos leads to difficulties in tracking modifications, reverting to stable states, and collaborating effectively, often resulting in overwritten work. Version Control Systems (VCS) solve these problems by providing a systematic approach to managing changes to code and other project files over time.</p>
+            <div class="image-placeholder">
+                <!-- Image: A visual representation of messy file names (e.g., project_final_v2.doc, project_REALLY_final.doc) -->
+                Placeholder for an image depicting chaotic file management without VCS.
+            </div>
+        </section>
+
+        <section id="what-is-git">
+            <h2>What is Git? (Core Concepts)</h2>
+            <p>Git, created by Linus Torvalds, is a powerful **Distributed Version Control System (DVCS)**. Being "distributed" means every developer has a complete copy of the project repository, including its entire history, allowing them to work offline and independently. Git is renowned for its speed, efficiency, strong support for non-linear development through branching and merging, and its focus on data integrity. Key concepts include the **repository** (your project's home), **commits** (snapshots of your project), the **working directory** (your current files), the **staging area** (where you prepare changes for a commit), and **branches** (independent lines of development, with <code class="code">main</code> or <code class="code">master</code> being the primary one). The <code class="code">.git</code> directory within your project is the heart of Git, storing all metadata and history.</p>
+        </section>
+
+        <section id="git-workflow">
+            <h2>Basic Git Workflow (Local Operations)</h2>
+            <p>A typical local Git workflow involves initializing a repository (<code class="code">git init</code>) or cloning an existing one (<code class="code">git clone</code>). As you make changes in your working directory, you use <code class="code">git add</code> to move those changes to the staging area. Once you're satisfied with the staged changes, you commit them to the repository using <code class="code">git commit -m "Descriptive message"</code>. You can view the project's history with <code class="code">git log</code>, create new lines of development with <code class="code">git branch</code>, and switch between them using <code class="code">git checkout</code> or <code class="code">git switch</code>. Finally, <code class="code">git merge</code> is used to combine changes from different branches.</p>
+            <div class="image-placeholder">
+                <!-- Image: A simple flowchart: Working Directory -> `git add` -> Staging Area -> `git commit` -> Repository -->
+                Placeholder for a flowchart of the basic Git workflow.
+            </div>
+        </section>
+
+        <section id="what-is-github">
+            <h2>What is GitHub? (Beyond Just Hosting)</h2>
+            <p>GitHub is a web-based hosting service for Git repositories; it is not Git itself but a platform that leverages Git. While it excels at storing your code, GitHub offers much more: robust tools for **collaboration** like Pull Requests and code reviews, **issue tracking** for managing bugs and features, **project management** features like Kanban boards, and powerful **automation** capabilities through GitHub Actions (for CI/CD). It also facilitates social coding through forking (creating personal copies of others' repos) and discovery. Alternatives like GitLab and Bitbucket offer similar functionalities.</p>
+        </section>
+
+        <section id="github-workflow">
+            <h2>Collaborative Workflow with GitHub</h2>
+            <p>Collaboration using GitHub typically starts with cloning a repository or forking it if you're contributing to an external project. You then create a feature branch locally (e.g., <code class="code">git checkout -b feature/new-idea</code>) to work on your changes in isolation. After making and committing your changes, you push your branch to GitHub (<code class="code">git push origin feature/new-idea</code>). On GitHub, you create a Pull Request (PR) to propose merging your changes into the main project branch. This PR becomes a hub for code review and discussion among team members. Once approved, the PR is merged, integrating your contributions. Other team members then pull these latest changes to their local repositories (<code class="code">git pull origin main</code>).</p>
+            <div class="image-placeholder">
+                <!-- Image: Diagram showing local repos, a remote GitHub repo, and arrows for push, pull, PR. -->
+                Placeholder for a diagram of the GitHub collaborative workflow.
+            </div>
+        </section>
+
+        <section id="devops-lifecycle">
+            <h2>Git & GitHub in the DevOps Lifecycle</h2>
+            <p>Git and GitHub are integral to nearly every stage of the DevOps lifecycle. During **Planning**, GitHub Issues track features and tasks. In the **Code** phase, developers use Git for version control. Pushing code or creating PRs can trigger automated **Build** and **Test** processes via CI/CD tools like GitHub Actions. Git tags mark specific versions for **Release**, and CD pipelines, often triggered by merges, handle **Deployment**. Even in **Operate & Monitor**, Infrastructure as Code (IaC) managed in Git allows for versioned, reviewable infrastructure changes and easier rollbacks, closing the feedback loop by logging operational issues back into GitHub Issues.</p>
+        </section>
+
+        <section id="benefits">
+            <h2>Key Benefits for DevOps</h2>
+            <p>The adoption of Git and GitHub in a DevOps environment brings significant benefits. They enhance **collaboration and transparency**, as everyone can see the code history and discussions. **Automation** is a key driver, with Git events triggering CI/CD pipelines. This leads to improved **traceability** for audits and **reproducibility** of builds and environments. The ability to perform **rollbacks** to previous stable versions is crucial for mitigating deployment risks. Furthermore, managing **Infrastructure as Code** in Git enables versioning and review for infrastructure changes, all contributing to **faster, more reliable release cycles**.</p>
+        </section>
+
+        <section id="demo">
+            <h2>Live Demo Ideas</h2>
+            <p>A practical demonstration can greatly enhance understanding. Consider showing these steps: 1. Create a new repository on GitHub. 2. Clone it locally. 3. Create a file, add, and commit it. 4. Push changes to GitHub. 5. Create a new feature branch. 6. Make changes, commit, and push the branch. 7. Create a Pull Request on GitHub. 8. Merge the Pull Request. 9. Pull the merged changes back to the local main branch. Practicing this flow beforehand is key, and having backup screenshots is wise.</p>
+            <div class="slideshow-placeholder">
+                <!-- Slideshow: Live Demo Steps -->
+                <!-- Image 1: Screenshot of GitHub new repo page -->
+                <!-- Image 2: Screenshot of `git clone` command in terminal -->
+                <!-- Image 3: Screenshot of pushed file on GitHub interface -->
+                <!-- Image 4: Screenshot of creating a branch and making a change -->
+                <!-- Image 5: Screenshot of the Pull Request creation page on GitHub -->
+                <!-- Image 6: Screenshot of a merged Pull Request on GitHub -->
+                <!-- Image 7: Screenshot of `git pull` showing merged changes locally -->
+                Placeholder for a slideshow of demo step screenshots.
+            </div>
+        </section>
+
+        <section id="best-practices">
+            <h2>Best Practices</h2>
+            <p>To maximize the benefits of Git and GitHub, follow best practices. Commit often and keep commits small and atomic, focusing on one logical change per commit. Write meaningful commit messages: a concise subject line (e.g., "Fix: User login bug") and an optional body explaining the 'what' and 'why'. Always use branches for new features, bug fixes, or experiments; avoid committing directly to the `main` branch. Pull frequently to keep your local `main` branch updated. Thoroughly review Pull Requests, as they are a critical quality gate. Utilize a <code class="code">.gitignore</code> file to exclude unnecessary files like build artifacts or IDE configurations. Crucially, never commit secrets like API keys or passwords directly into the repository; use environment variables or dedicated secret management tools instead.</p>
+        </section>
+
+        <section id="summary">
+            <h2>Summary / Key Takeaways</h2>
+            <p>In conclusion, Git is indispensable for managing code history and enabling efficient parallel development. GitHub, or similar platforms, extends Git's capabilities by facilitating robust collaboration and integrating seamlessly with DevOps tooling. Together, Git and GitHub are foundational for modern software development, underpinning CI/CD pipelines, Infrastructure as Code, and overall DevOps agility. A solid understanding of their core workflows is essential for any aspiring or practicing DevOps professional.</p>
+        </section>
+
+        <footer>
+            <p>&copy; [Year] [Your Name]. Presentation for [DevOps Course Name].</p>
+            <p>Further Resources: <a href="https://git-scm.com/doc" target="_blank">Official Git Docs</a>, <a href="https://guides.github.com/" target="_blank">GitHub Guides</a>.</p>
+        </footer>
+
+    </main>
+
+</body>
+</html>
