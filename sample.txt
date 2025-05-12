@@ -1,2 +1,3 @@
 git and github presentation on merge conflict
-
+this is a merge conflict creation line
+this is line 3 from the mater branch
