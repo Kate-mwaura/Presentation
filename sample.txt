@@ -7,3 +7,7 @@ adding this line to differentiate master and sample branch
 this is the second merge line from sample branch
 this will create the merge conflict from both branches
 
+
+
+this is now me asking for help juu wuuuuuueeeeeeeh!!!!
+
