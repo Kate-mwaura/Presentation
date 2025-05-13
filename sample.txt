@@ -1,0 +1,2 @@
+git and github presentation on merge conflict
+
